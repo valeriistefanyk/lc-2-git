@@ -9,6 +9,11 @@ def generate_name_by_gender():
     else:
         return None
 
+def generate_full_name(gender=None):
+    if gender != "male" or gender != "female":
+        gender = None
+    return names.get_full_name(gender=gender)
+
 if __name__ == "__main__":
     # func 1
     name = generate_name_by_gender()
@@ -16,3 +21,7 @@ if __name__ == "__main__":
         print(f"Generated name: {name}")
     else:
         print("You entered incorrect gender")
+
+    # func 2
+    print(generate_full_name())
+    print(generate_full_name(gender='female'))
