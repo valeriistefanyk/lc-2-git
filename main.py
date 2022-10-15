@@ -1,4 +1,5 @@
 import names
+import random
 
 def generate_name_by_gender():
     gender = input("Enter your gender [Male/Female or M/F]: ").lower()
@@ -14,6 +15,11 @@ def generate_full_name(gender=None):
         gender = None
     return names.get_full_name(gender=gender)
 
+def print_person_brief_info():
+    full_name = generate_full_name()
+    age = random.randint(14, 100)
+    print(f"{full_name}, {age} years old")
+
 if __name__ == "__main__":
     # func 1
     name = generate_name_by_gender()
@@ -25,3 +31,6 @@ if __name__ == "__main__":
     # func 2
     print(generate_full_name())
     print(generate_full_name(gender='female'))
+
+    # func 3
+    print_person_brief_info()
